@@ -1,12 +1,10 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "index.js", "use": "@vercel/node" }
+    "version": 2,
+    "builds": [
+    { "src": "index.js", "use": "@vercel/node" },
+    { "src": "src", "use": "@vercel/static-build" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "index.js" }
-  ],
-  "env": {
-    "MONGO_URI": "@mongo_uri"
-  }
+    { "src": "/api/(.*)", "dest": "index.js" },
+    { "src": "/(.*)", "dest": "/src/$1" }  ]
 }
