@@ -6,7 +6,7 @@ function AdminPanel() {
   const [filter, setFilter] = useState('');
 
   const fetchFeedbacks = async () => {
-    const url = filter ? `https://employee-feedback-portal.vercel.app/feedback?category=${filter}` : `http://localhost:5000/feedback`;
+    const url = filter ? `https://employee-feedback-portal.vercel.app/feedback?category=${filter}` : `https://employee-feedback-portal.vercel.app/feedback`;
     const res = await axios.get(url);
     setFeedbacks(res.data);
   };
