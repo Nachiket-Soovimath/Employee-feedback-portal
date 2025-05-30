@@ -25,7 +25,7 @@ Start the backend server using nodemon:
 
     npm start
 
-Frontend (React.js)
+### Frontend (React.js) 
 
     Navigate to the frontend folder:
 
@@ -45,7 +45,7 @@ Start the React development server:
 
         Admin Panel: http://localhost:3000/admin
 
-API Structure
+## API Structure
 Method	Endpoint	Description
 POST	/feedback	Submit feedback
 GET	/feedback	Retrieve all feedback
@@ -62,7 +62,7 @@ Assumptions Made
 
     The admin panel is directly accessible via the /admin route.
 
-Features Completed
+## Features Completed
 
     Employee can submit anonymous feedback with a selected category.
 
