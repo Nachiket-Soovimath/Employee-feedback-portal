@@ -6,7 +6,7 @@ function AdminPanel() {
   const [filter, setFilter] = useState('');
 
   const fetchFeedbacks = async () => {
-    const url = filter ? `http://localhost:5000/feedback?category=${filter}` : `http://localhost:5000/feedback`;
+    const url = filter ? `https://employee-feedback-portal.vercel.app/feedback?category=${filter}` : `http://localhost:5000/feedback`;
     const res = await axios.get(url);
     setFeedbacks(res.data);
   };
@@ -14,12 +14,12 @@ function AdminPanel() {
   useEffect(() => { fetchFeedbacks(); }, [filter]);
 
   const markReviewed = async (id) => {
-    await axios.patch(`http://localhost:5000/feedback/${id}/reviewed`);
+    await axios.patch(`https://employee-feedback-portal.vercel.app/feedback/${id}/reviewed`);
     fetchFeedbacks();
   };
 
   const deleteFeedback = async (id) => {
-    await axios.delete(`http://localhost:5000/feedback/${id}`);
+    await axios.delete(`https://employee-feedback-portal.vercel.app/feedback/${id}`);
     fetchFeedbacks();
   };
   return (
