@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 function FeedbackForm() {
-  const baseUrl = process.env.REACT_APP_API_URL;
+
      const [text, setText] = useState('');
   const [category, setCategory] = useState('Work Environment');
   const [submitted, setSubmitted] = useState(false);
@@ -12,7 +12,7 @@ function FeedbackForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-       await axios.post(`${baseUrl}/feedback`, { text, category });
+      await axios.post('http://localhost:5000/feedback', { text, category });
       setText('');
       setCategory('Work Environment');
       setSubmitted(true);

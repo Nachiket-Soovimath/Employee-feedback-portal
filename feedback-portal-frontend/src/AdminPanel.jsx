@@ -4,11 +4,9 @@ import axios from 'axios';
 function AdminPanel() {
      const [feedbacks, setFeedbacks] = useState([]);
   const [filter, setFilter] = useState('');
- const baseUrl = process.env.REACT_APP_API_URL;
+
   const fetchFeedbacks = async () => {
-    const url = filter
-        ? `${baseUrl}/feedback?category=${encodeURIComponent(filter)}`
-        : `${baseUrl}/feedback`;
+    const url = filter ? `http://localhost:5000/feedback?category=${filter}` : `http://localhost:5000/feedback`;
     const res = await axios.get(url);
     setFeedbacks(res.data);
   };
@@ -16,12 +14,12 @@ function AdminPanel() {
   useEffect(() => { fetchFeedbacks(); }, [filter]);
 
   const markReviewed = async (id) => {
-     await axios.patch(`${baseUrl}/feedback/${id}/reviewed`);
+    await axios.patch(`http://localhost:5000/feedback/${id}/reviewed`);
     fetchFeedbacks();
   };
 
   const deleteFeedback = async (id) => {
-    await axios.delete(`${baseUrl}/feedback/${id}`);
+    await axios.delete(`http://localhost:5000/feedback/${id}`);
     fetchFeedbacks();
   };
   return (
