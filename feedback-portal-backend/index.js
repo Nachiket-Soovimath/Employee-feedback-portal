@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 const allowedOrigins = [
   'http://localhost:3000',          
-  'https://your-frontend-url.com'   
+  'https://employee-feedback-portal-xvdd.vercel.app/'   
 ];
 
 app.use(cors({
