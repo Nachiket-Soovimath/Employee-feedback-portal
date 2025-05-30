@@ -12,7 +12,7 @@ function FeedbackForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://employee-feedback-portal.vercel.app/feedback', { text, category });
+      await axios.post('http://localhost:5000/feedback', { text, category });
       setText('');
       setCategory('Work Environment');
       setSubmitted(true);
